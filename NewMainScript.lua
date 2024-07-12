@@ -66,28 +66,28 @@ if not shared.VapeDeveloper then
 						delfile(v)
 					end 
 				end
-				if isfolder("Forplex1/CustomModules") then 
-					for i,v in pairs(listfiles("Forplex1/CustomModules")) do 
+				if isfolder("vape/CustomModules") then 
+					for i,v in pairs(listfiles("vape/CustomModules")) do 
 						if isfile(v) and ({readfile(v):find("--This watermark is used to delete the file if its cached, remove it to make the file persist after commits.")})[1] == 1 then
 							delfile(v)
 						end 
 					end
 				end
-				if isfolder("Forplex1/Libraries") then 
+				if isfolder("vape/Libraries") then 
 					for i,v in pairs(listfiles("Forplex1/Libraries")) do 
 						if isfile(v) and ({readfile(v):find("--This watermark is used to delete the file if its cached, remove it to make the file persist after commits.")})[1] == 1 then
 							delfile(v)
 						end 
 					end
 				end
-				writefile("Forplex1/commithash.txt", commit)
+				writefile("vape/commithash.txt", commit)
 			end
 		else
 			makefolder("vape")
-			writefile("Forplex1/commithash.txt", commit)
+			writefile("vape/commithash.txt", commit)
 		end
 	else
-		displayErrorPopup("Failed to connect to github, please try using a VPN.")
+		displayErrorPopup("Forplex Failed To Execute, Please Contact Complex To Fix This Error.")
 		error("Failed to connect to github, please try using a VPN.")
 	end
 end
